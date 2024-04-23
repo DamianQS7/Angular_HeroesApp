@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class NewHeroPageComponent {
-
+  
+  public publishers = ['DC Comics', 'Marvel Comics'];
+  
 }
