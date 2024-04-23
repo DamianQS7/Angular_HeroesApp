@@ -1,27 +1,20 @@
-# HeroesApp
+# Heroes App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+An angular 17 web app developed using the traditional module based approach. 
+While using the app, you can browse through a gallery displaying the image and some brief information related to characters belonging to the DC Comics world; You can click on any of the characters to get learn more.
+The app also implements an admin dashboard where you can perform CRUD operations to add, edit, or remove characters.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Concepts applied while building the project
+* Routing: forRoot and forChild => Lazy Loaded modules.
+* HTTP calls: using HttpClientModule => Working with Observables.
+* Built-in and Custom Pipes
+* Backend implementation: simple backend with a .json file using JSON server.
+* UI: Angular Material and some utility classes from PrimeFlex.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Dev
+1. Clone the project
+2. Run ```npm install```
+3. Run ```npm run backend``` to run the backend
+4. Initialize the app with ```npm start``` or ```ng serve```
