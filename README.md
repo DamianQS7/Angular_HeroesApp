@@ -6,8 +6,8 @@ The app also implements an admin dashboard where you can perform CRUD operations
 
 
 ### Concepts applied while building the project
-* Routing: forRoot and forChild => Lazy Loaded modules.
-* HTTP calls: using HttpClientModule => Working with Observables.
+* Routing: Lazy Loading, Activated Route, Router, Route Guards.
+* HTTP calls using HttpClientModule => Working with Observables.
 * Built-in and Custom Pipes
 * Backend implementation: simple backend with a .json file using JSON server.
 * UI: Angular Material and some utility classes from PrimeFlex.

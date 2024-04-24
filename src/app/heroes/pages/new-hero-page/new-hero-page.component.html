@@ -1,34 +1,52 @@
-<h1>Edit | Add Hero</h1>
+<h1>{{ currentHero.id ? 'Edit' : 'Add'}} Hero</h1>
 
 <mat-divider class="mb-2"></mat-divider>
 <div class="grid">
     <div class="col-12 sm:col-6">
         <mat-card>
             <mat-card-content>
-                <div class="grid">
+                <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
                     <mat-form-field class="col-12 sm:col-6">
                         <mat-label>Superhero</mat-label>
-                        <input type="text" matInput required>
+                        <input 
+                            type="text" 
+                            matInput 
+                            required
+                            formControlName="superhero">
                     </mat-form-field>
 
                     <mat-form-field class="col-12 sm:col-6">
                         <mat-label>Alter ego</mat-label>
-                        <input type="text" matInput required>
+                        <input 
+                            type="text" 
+                            matInput 
+                            required
+                            formControlName="alter_ego">
                     </mat-form-field>
 
-                    <mat-form-field class="col-12 sm:col-6">
+                    <mat-form-field class="col-12">
                         <mat-label>First Appearance</mat-label>
-                        <input type="text" matInput required>
+                        <input 
+                            type="text" 
+                            matInput 
+                            required
+                            formControlName="first_appearance">
                     </mat-form-field>
 
-                    <mat-form-field class="col-12 sm:col-6">
+                    <mat-form-field class="col-12">
                         <mat-label>Characters</mat-label>
-                        <input type="text" matInput required>
+                        <input 
+                            type="text" 
+                            matInput 
+                            required
+                            formControlName="characters">
                     </mat-form-field>
 
-                    <mat-form-field class="col-12 sm:col-6">
+                    <mat-form-field class="col-12">
                         <mat-label>Publisher</mat-label>
-                        <mat-select required>
+                        <mat-select 
+                            required
+                            formControlName="publisher">
                             <mat-option 
                                 [value]="publisher"
                                 *ngFor="let publisher of publishers">
@@ -36,14 +54,30 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                </div>
+
+                    <mat-form-field class="col-12">
+                        <mat-label>Alternative Image</mat-label>
+                        <input 
+                            type="text" 
+                            matInput
+                            formControlName="alt_img">
+                    </mat-form-field>
+                </form>
 
                 <div class="flex justify-content-between">
-                    <button mat-raised-button color="warn">
+                    <button
+                        *ngIf="currentHero.id" 
+                        mat-raised-button 
+                        color="warn"
+                        (click)="onDeleteHero()">
+                        <mat-icon>delete</mat-icon>
                         Delete
                     </button>
-
-                    <button mat-raised-button color="accent">
+                    <span></span>
+                    <button 
+                        mat-raised-button 
+                        color="accent"
+                        (click)="onSubmit()">
                         <mat-icon>save</mat-icon>
                         Save
                     </button>
@@ -53,7 +87,7 @@
     </div>
     <div class="col-12 sm:col-6">
         <mat-card>
-            <img src="" alt="" mat-card-image>
+            <img [src]="currentHero | heroImage" alt="" mat-card-image>
         </mat-card>
     </div>
 </div>

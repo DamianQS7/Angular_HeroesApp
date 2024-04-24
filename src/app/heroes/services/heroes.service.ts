@@ -42,10 +42,10 @@ export class HeroesService {
   }
 
   public deleteHero( id: string ): Observable<boolean> {
-    return this.http.delete(`${this.getEndpoint}/${id}`)
+    return this.http.delete<Hero>(`${this.getEndpoint}/${id}`)
         .pipe(
+          map( response => true),
           catchError( error => of(false)),
-          map( response => true)
         );
   }
 }
